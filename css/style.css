@@ -18,6 +18,7 @@
     --transition-function: ease;
 }
 
+
 /* NORMALIZER */
 
 * {
@@ -170,7 +171,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute; 
+    position: absolute;
     top: calc(50% - 1rem);
     right: 1rem;
     width: 2rem;
@@ -261,6 +262,10 @@ body {
     transition: background var(--transition-duration) var(--transition-function);
 }
 .add-cta:hover {
+    background-color: var(--background-dark)
+}
+
+.add-cta.disabled {
     background-color: var(--background-dark)
 }
 
@@ -382,6 +387,43 @@ body {
     }
 }
 
+/* CAROUSEL */
+
+@media screen and (max-width: 767px) {
+    .carousel {
+        position: relative;
+    }
+    .carousel-content {
+        width: 400vw;
+        position: relative;
+        left: 0;
+        transition: left .5s ease-in-out;
+    }
+    .carousel-handler {
+        position: absolute;
+        top: calc(50% - 1.5rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4rem;
+        aspect-ratio: 1/1;
+        font-size: 3rem;
+        cursor: pointer;
+    }
+    .carousel-prev {
+        left: 1rem;
+    }
+    .carousel-next {
+        right: 1rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .carousel-handler {
+        display: none;
+    }
+}
+
 /* REINSURANCE  */
 
 .reinsur {
@@ -494,4 +536,11 @@ body {
 }
 .legal-lnk {
     color: #fff;
+}
+
+
+
+
+.hidden {
+    display: none;
 }
